@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sawarabi+Mincho&display=swap');
+@import 'tailwindcss';
+
+@layer base {
+  body {
+    @apply m-auto min-w-80 max-w-640 font-text bg-white;
+  }
+
+  ul {
+    @apply m-0 p-0 list-none;
+  }
+
+  a {
+    @apply text-white no-underline font-medium;
+  }
+
+  header {
+    @apply top-0 z-40 w-full h-20 flex items-center justify-between sticky max-w-640 px-4 py-2 box-border bg-crvena;
+  }
+}
+
+@layer components {
+  .meni-stavka {
+    @apply ml-2.5;
+  }
+
+  .burger-meni-stavka {
+    @apply w-full py-4 block text-center hover:bg-white/10 transition;
+  }
+
+  .meni-link {
+    @apply px-5 py-2.5 rounded-4xl select-none hover:bg-white/10 transition;
+  }
+
+  .meni-aktivan {
+    @apply bg-white/20 hover:bg-white/20 text-white/80;
+  }
+
+  .footer-link {
+    @apply hover:text-yellow-500 transition-colors duration-200;
+  }
+
+  .bilstein {
+    @apply w-1/3 sm:w-1/8;
+  }
+
+  .opis-logo {
+    @apply mt-4 text-center text-black/80 font-semibold;
+  }
+
+  .kontakt-dugme {
+    @apply w-12 h-12 rounded-full flex items-center justify-center text-white cursor-pointer transition;
+  }
+}
+
+@layer utilities {
+  .pozadina {
+    @apply bg-linear-to-b from-crvena to-white;
+  }
+
+  .min-visina {
+    @apply min-h-[calc(100vh-5rem)];
+  }
+
+  .logo {
+    @apply font-bold text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl;
+  }
+
+  .text-naslov {
+    @apply text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl;
+  }
+
+  .sekcija-senka {
+    @apply shadow-[0px_4px_1rem_0_black];
+  }
+
+  .kol {
+    @apply flex flex-col;
+  }
+
+  .red {
+    @apply flex flex-col sm:flex-row;
+  }
+
+  .wrap {
+    @apply flex flex-wrap justify-center;
+  }
+}
+
+@theme {
+  --breakpoint-xs: 420px;
+  --color-crvena: #cc0000;
+  --color-tamnocrvena: #770000;
+  --color-plava: #0000cc;
+  --color-tamnoplava: #000055;
+  --font-text: 'Poppins', sans-serif;
+  --font-logo-kombi: 'Paytone One', sans-serif;
+  --font-logo-japanac: 'Sawarabi Mincho', sans-serif;
+}
