@@ -3,7 +3,7 @@ import Linija from "@/components/Linija";
 import KontaktKarta from "@/components/KontaktKarta";
 
 const prodavci = [
-    { naslov: "Putnicki i kombi program", boja: "crvena", text: "text-crvena" },
+    { naslov: "Putnički i kombi program", boja: "crvena", text: "text-crvena" },
     { naslov: "Azijski program", boja: "plava", text: "text-plava" },
     { naslov: "Teretni program", boja: "tamnocrvena", text: "text-tamnocrvena" },
 ];
@@ -24,7 +24,7 @@ function Kontakt() {
             </section>
 
             <section className="my-24">
-                <h2 className="p-4 text-center text-3xl font-medium text-gray-700">Kontaktirajte prodavca za vaš program</h2>
+                <h2 className="p-4 text-center text-3xl font-medium text-neutral-700 tracking-tight">Kontaktirajte prodavca za vaš program</h2>
 
                 <Linija />
 
@@ -42,7 +42,7 @@ function Kontakt() {
             </section>
 
             <section className="my-24">
-                <h2 className="p-4 text-center text-3xl font-medium md:whitespace-pre-line text-gray-700">
+                <h2 className="p-4 text-center text-3xl font-medium md:whitespace-pre-line text-neutral-700 tracking-tight">
                     {"Za informacije u vezi sa fakturama i dugovanjima,\nkontaktirajte računovodstvo"}
                 </h2>
 
@@ -60,8 +60,8 @@ function Kontakt() {
                     <dl className="kol justify-center gap-8 text-lg">
                         {podaciFirma.map(({ naslov, vrednost }) => (
                             <div key={naslov}>
-                                <dt className="text-gray-700 font-medium">{naslov}</dt>
-                                <dd className="font-semibold tracking-wider">{vrednost}</dd>
+                                <dt className="text-neutral-600 font-medium">{naslov}</dt>
+                                <dd className="font-semibold tracking-wide text-neutral-800">{vrednost}</dd>
                             </div>
                         ))}
                     </dl>

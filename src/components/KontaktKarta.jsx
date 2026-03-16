@@ -16,8 +16,8 @@ const boje = {
 
 function KontaktKarta({ boja = "crvena" }) {
     return (
-        <div className={`p-8 kol items-center rounded-2xl bg-gray-100 border-4 shadow-[4px_4px_0] ${boje[boja]}`}>
-            <div className="mb-2 w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden">
+        <div className={`p-9 sm:p-10 kol items-center gap-8 rounded-2xl bg-neutral-50 border-4 shadow-[4px_4px_0] ${boje[boja]}`}>
+            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden bg-white shadow-[0_4px_12px_-2px_rgb(0_0_0/0.08),0_2px_6px_-2px_rgb(0_0_0/0.06)]">
                 <img
                     src={osoba.slika}
                     alt={osoba.ime}
@@ -27,15 +27,15 @@ function KontaktKarta({ boja = "crvena" }) {
                 />
             </div>
 
-            <h2 className="mb-4 text-xl font-bold text-shadow-2xl text-black/80">
+            <h2 className="text-xl font-bold text-shadow-2xl text-black/80">
                 {osoba.ime}
             </h2>
 
-            <p className="mb-12 text-2xl font-extrabold tracking-wider">
+            <p className="text-2xl font-extrabold tracking-wider">
                 {osoba.broj}
             </p>
 
-            <div className="flex gap-12">
+            <div className="flex gap-10 sm:gap-12">
                 <button className="kontakt-dugme bg-violet-500 hover:bg-violet-700"
                     onClick={() => window.location.href = `viber://chat?number=${osoba.telefon}`}
                     aria-label={`Otvori Viber ćaskanje sa ${osoba.ime}`}>
@@ -50,7 +50,7 @@ function KontaktKarta({ boja = "crvena" }) {
                     <FaWhatsapp size={28} />
                 </button>
             </div>
-        </div >
+        </div>
     );
 }
 

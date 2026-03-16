@@ -3,7 +3,7 @@ const mapa =
 
 function Karta() {
   return (
-    <div className="h-100 md:h-120 md:rounded-xl md:overflow-hidden border border-black/30 shadow-[0px_4px_1rem_rgba(0,0,0,0.25)]">
+    <div className="h-100 md:h-120 md:rounded-xl md:overflow-hidden border border-neutral-200 shadow-card bg-neutral-100">
       <iframe
         src={mapa}
         allowFullScreen
