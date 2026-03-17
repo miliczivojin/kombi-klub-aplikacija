@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Sawarabi+Mincho&display=swap');
-@import 'tailwindcss';
+@import url("https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Sawarabi+Mincho&display=swap");
+@import "tailwindcss";
 
 @theme {
   --breakpoint-xs: 420px;
+  --breakpoint-mobile: 480px;
 
   --color-crvena: #b91c1c;
   --color-crvena-soft: #fef2f2;
@@ -23,16 +24,18 @@
   --color-neutral-800: #262626;
   --color-neutral-900: #171717;
 
-  --font-text: 'Poppins', sans-serif;
-  --font-logo-kombi: 'Paytone One', sans-serif;
-  --font-logo-japanac: 'Sawarabi Mincho', serif;
+  --font-text: "Poppins", sans-serif;
+  --font-logo-kombi: "Paytone One", sans-serif;
+  --font-logo-japanac: "Sawarabi Mincho", sans-serif;
 
   --spacing-section: 2.5rem;
   --spacing-block: 1.5rem;
 
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.06);
-  --shadow-card-hover: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.06);
+  --shadow-card:
+    0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+  --shadow-card-hover:
+    0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.06);
   --shadow-section: 0 4px 14px 0 rgb(0 0 0 / 0.12);
   --shadow-button: 0 2px 4px rgb(0 0 0 / 0.12);
   --shadow-button-hover: 0 4px 8px rgb(0 0 0 / 0.15);
@@ -47,7 +50,8 @@
 
 @layer base {
   body {
-    @apply m-auto min-w-80 max-w-640 font-text bg-neutral-50 text-neutral-800 antialiased;
+    @apply m-auto min-w-80 max-w-640 font-text text-neutral-800 antialiased;
+    background: #f7f7f8;
   }
 
   ul {
@@ -72,7 +76,7 @@
     @apply relative px-4 py-2.5 rounded-xl select-none hover:bg-white/15 active:bg-white/20 transition-colors duration-200 font-medium text-white/95;
   }
   .meni-link::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -111,7 +115,41 @@
   }
 
   .kontakt-dugme {
-    @apply w-12 h-12 rounded-xl flex items-center justify-center text-white cursor-pointer transition-all duration-200 shadow-button hover:shadow-button-hover active:scale-[0.98];
+    @apply w-12 h-12 rounded-xl flex items-center justify-center cursor-pointer transition-all duration-200 active:scale-[0.98] select-none;
+  }
+
+  /* Digital identity contact card */
+  .kontakt-karta-id {
+    @apply rounded-xl bg-white text-neutral-900 antialiased transition-all duration-200;
+    box-shadow:
+      0 1px 1px rgba(15, 23, 42, 0.04),
+      0 12px 28px rgba(15, 23, 42, 0.10);
+  }
+  .kontakt-karta-id:hover {
+    box-shadow:
+      0 2px 2px rgba(15, 23, 42, 0.05),
+      0 22px 50px rgba(15, 23, 42, 0.16);
+  }
+  .kontakt-karta-id__portrait {
+    @apply rounded-xl overflow-hidden bg-neutral-100 flex-shrink-0;
+    box-shadow:
+      0 0 0 1px rgba(15, 23, 42, 0.08),
+      0 10px 24px rgba(15, 23, 42, 0.16);
+  }
+  .kontakt-karta-id__dugme-viber,
+  .kontakt-karta-id__dugme-wa {
+    @apply bg-white text-neutral-700 border border-neutral-200 hover:border-neutral-300;
+    box-shadow: 0 1px 1px rgba(15, 23, 42, 0.04), 0 8px 18px rgba(15, 23, 42, 0.08);
+  }
+  .kontakt-karta-id__dugme-viber {
+    @apply text-violet-600;
+  }
+  .kontakt-karta-id__dugme-wa {
+    @apply text-green-600;
+  }
+  .kontakt-karta-id__dugme-tel {
+    @apply bg-emerald-500 hover:bg-emerald-600 text-white;
+    box-shadow: 0 1px 1px rgba(15, 23, 42, 0.06), 0 12px 26px rgba(16, 185, 129, 0.35);
   }
 
   .dugme-glavno {
@@ -119,7 +157,7 @@
   }
 
   .stat-card {
-    @apply flex flex-col items-center text-center p-6 sm:p-8 rounded-2xl bg-white border border-neutral-200/80 shadow-card transition-all duration-300 hover:shadow-card-hover hover:border-neutral-300/80;
+    @apply flex flex-col items-center text-center p-6 sm:p-8 rounded-xl bg-white border border-neutral-200/80 shadow-card transition-all duration-300 hover:shadow-card-hover hover:border-neutral-300/80;
   }
   .stat-card__icon {
     @apply flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-xl text-crvena mb-4;
@@ -128,7 +166,7 @@
     @apply text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-crvena mb-1;
   }
   .stat-card__label {
-    @apply text-sm sm:text-base font-medium text-neutral-600 leading-snug;
+    @apply text-xs sm:text-sm font-medium text-neutral-600 leading-snug whitespace-nowrap;
   }
 }
 
