@@ -2,7 +2,7 @@ import Karta from "@/components/Karta";
 import Linija from "@/components/Linija";
 import KontaktKarta from "@/components/KontaktKarta";
 
-const prodavci = [
+const radnici = [
     { naslov: "Putnički i kombi program", boja: "crvena", text: "text-crvena" },
     { naslov: "Azijski program", boja: "plava", text: "text-plava" },
     { naslov: "Teretni program", boja: "tamnocrvena", text: "text-tamnocrvena" },
@@ -29,13 +29,13 @@ function Kontakt() {
                 <Linija />
 
                 <div className="mt-8 xs:px-4 py-8 wrap gap-8 sm:gap-12">
-                    {prodavci.map(({ naslov, boja, text }) => (
-                        <div key={boja} className="kol w-full max-w-[18rem] md:max-w-md mx-auto">
+                    {radnici.map(({ naslov, boja, text }) => (
+                        <div key={boja} className="kol w-11/12 max-w-[20rem] md:max-w-md">
                             <h3 className={`mb-4 text-center text-xl font-semibold ${text}`}>
                                 {naslov}
                             </h3>
 
-                            <KontaktKarta boja={boja} className="w-full max-w-none mx-0" />
+                            <KontaktKarta boja={boja} className="w-full" />
                         </div>
                     ))}
                 </div>
@@ -48,27 +48,34 @@ function Kontakt() {
 
                 <Linija />
 
-                <div className="mt-10 xs:px-4 py-8 flex flex-col md:flex-row justify-center items-stretch gap-8">
-                    <div className="kol w-full max-w-md mx-auto md:mx-0 justify-center">
-                        <KontaktKarta boja="crvena" ikona="file" className="w-full max-w-none mx-0" />
+                <div className="mt-8 xs:px-4 py-8 wrap gap-8 sm:gap-12">
+                    <div className="kol w-full max-w-md justify-center items-center">
+                        <KontaktKarta boja="crvena" ikona="file" className="w-full" />
                     </div>
 
-                    <div className="kol w-full max-w-md mx-auto md:mx-0 justify-center">
-                        <article className="kontakt-karta-id w-full p-6 sm:p-7 flex flex-col gap-5 h-full">
-                            <div className="flex flex-col gap-1 text-left">
-                                <h4 className="text-lg sm:text-xl font-semibold leading-tight text-neutral-900 tracking-tight">
-                                    Podaci za plaćanje
+                    <div className="kol w-full max-w-md justify-center">
+                        <article className="kontakt-karta-id w-full h-full p-6 kol gap-4">
+                            <div className="kol text-left gap-2">
+                                <h4 className="text-lg sm:text-xl font-semibold tracking-tight text-neutral-900">
+                                    Podaci o firmi
                                 </h4>
                                 <p className="text-sm text-neutral-500">
-                                    Informacije o firmi i računu Kombi Kluba.
+                                    Osnovni podaci i račun Kombi Kluba.
                                 </p>
                             </div>
 
-                            <dl className="mt-2 grid grid-cols-1 gap-4 text-base text-neutral-800">
+                            <dl className="mt-4 grid grid-cols-1 gap-4 text-base text-neutral-800">
                                 {podaciFirma.map(({ naslov, vrednost }) => (
-                                    <div key={naslov} className="flex flex-row items-baseline justify-between gap-6">
-                                        <dt className="text-neutral-600 font-medium whitespace-nowrap">{naslov}</dt>
-                                        <dd className="font-semibold tracking-wide text-right">{vrednost}</dd>
+                                    <div
+                                        key={naslov}
+                                        className="flex flex-col xs:flex-row items-start xs:items-baseline xs:justify-between"
+                                    >
+                                        <dt className="text-neutral-600 font-medium">
+                                            {naslov}
+                                        </dt>
+                                        <dd className="font-semibold tracking-wide text-left xs:text-right">
+                                            {vrednost}
+                                        </dd>
                                     </div>
                                 ))}
                             </dl>
