@@ -10,7 +10,7 @@ function PronadjiDelove() {
             <div className="relative px-4 kol justify-around items-center w-full min-visina bg-center bg-cover bg-no-repeat sekcija-senka" style={{ backgroundImage: `url(${pozadina})` }}>
                 <div className="absolute inset-0 bg-neutral-900/40 backdrop-blur-sm pointer-events-none"></div>
                 <div className="relative z-10 text-center">
-                    <h1 className="py-4 text-white text-naslov font-semibold whitespace-pre-line">
+                    <h1 className="pt-4 text-white text-naslov font-semibold whitespace-pre-line">
                         {`Skenirajte zadnju stranu saobraćajne dozvole\nili unesite podatke sa dozvole ručno`}
                     </h1>
 

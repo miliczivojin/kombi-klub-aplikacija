@@ -16,8 +16,7 @@ const skrolujDo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 };
 
-const easeOutCubic = (t) => 1 - (1 - t) ** 
-3;
+const easeOutCubic = (t) => 1 - (1 - t) ** 3;
 
 const STATS = [
     {
@@ -75,7 +74,7 @@ function useCountUp(isActive, target, durationMs = 1500) {
 function useStatsInView() {
     const ref = useRef(null);
     const [inView, setInView] = useState(false);
-    
+
     useEffect(() => {
         const el = ref.current;
         if (!el) return;
@@ -232,7 +231,7 @@ function Pocetna() {
                     <h2 className={`w-full text-center text-naslov text-crvena font-semibold`}>
                         Putnički i kombi program
                     </h2>
-                    <div className="mt-4 mb-10 w-full flex justify-center"><Linija boja="crvena" /></div>
+                    <div className="mb-10 w-full flex justify-center"><Linija boja="crvena" /></div>
                 </div>
                 <div className="xs:px-4 wrap gap-8 sm:gap-12">
                     <KontaktKarta boja="crvena" />
@@ -246,7 +245,7 @@ function Pocetna() {
                     <h2 className={`w-full text-center text-naslov text-plava font-semibold`}>
                         Azijski program
                     </h2>
-                    <div className="mt-4 mb-10 w-full flex justify-center"><Linija boja="plava" /></div>
+                    <div className="mb-10 w-full flex justify-center"><Linija boja="plava" /></div>
                 </div>
                 <div className="xs:px-4 wrap gap-8 sm:gap-12">
                     <KontaktKarta boja="plava" />
@@ -258,7 +257,7 @@ function Pocetna() {
                     <h2 className={`w-full text-center text-naslov text-tamnocrvena font-semibold`}>
                         Teretni program
                     </h2>
-                    <div className="mt-4 mb-10 w-full flex justify-center"><Linija boja="tamnocrvena" /></div>
+                    <div className="mb-10 w-full flex justify-center"><Linija boja="tamnocrvena" /></div>
                 </div>
                 <div className="xs:px-4 wrap gap-8 sm:gap-12">
                     <KontaktKarta boja="tamnocrvena" />
