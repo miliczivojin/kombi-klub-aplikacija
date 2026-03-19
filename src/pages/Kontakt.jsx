@@ -23,8 +23,8 @@ function Kontakt() {
                 <Karta />
             </section>
 
-            <section className="my-24">
-                <h2 className="p-4 text-center text-3xl font-medium text-neutral-700 tracking-tight">Kontaktirajte prodavca za vaš program</h2>
+            <section className="my-28">
+                <h2 className="px-4 text-center text-3xl font-medium text-neutral-700 tracking-tight">Kontaktirajte prodavca za vaš program</h2>
 
                 <Linija />
 
@@ -41,8 +41,8 @@ function Kontakt() {
                 </div>
             </section>
 
-            <section className="my-24">
-                <h2 className="p-4 text-center text-3xl font-medium md:whitespace-pre-line text-neutral-700 tracking-tight">
+            <section className="my-28">
+                <h2 className="px-4 text-center text-3xl font-medium md:whitespace-pre-line text-neutral-700 tracking-tight">
                     {"Za informacije u vezi sa fakturama i dugovanjima,\nkontaktirajte računovodstvo"}
                 </h2>
 
