@@ -3,7 +3,7 @@ import { BadgeCheck, FolderOpen } from "lucide-react";
 import Telefon from "@/components/Telefon";
 
 const osoba = {
-    ime: "Novica Milić",
+    ime: "Hedge Lamar",
     telefon: "381600877647",
     slika: "https://i.imgur.com/yXOvdOSs.jpg",
 };
