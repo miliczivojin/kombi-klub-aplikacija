@@ -1,5 +1,6 @@
 import pozadina from "@/assets/photos/pozadina_delovi.png";
 import saobracajna from "@/assets/photos/saobracajna.png";
+import SkenerSekcija from "@/components/SkenerSekcija";
 
 import Dugme from "@/components/Dugme";
 import Linija from "@/components/Linija";
@@ -28,6 +29,8 @@ function PronadjiDelove() {
                     </Dugme>
                 </div>
             </div>
+
+            <SkenerSekcija />
         </main >
     );
 }
