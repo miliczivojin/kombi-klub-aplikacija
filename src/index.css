@@ -13,6 +13,8 @@
   --color-tamnoplava: #1e3a8a;
   --color-tamnoplava-soft: #0f172a;
 
+  --color-bela-pozadina: #f7f7f8;
+
   --color-neutral-50: #fafafa;
   --color-neutral-100: #f5f5f5;
   --color-neutral-200: #e5e5e5;
@@ -50,7 +52,7 @@
 @layer base {
   body {
     @apply m-auto min-w-80 max-w-640 font-text text-neutral-800 antialiased;
-    background: #f7f7f8;
+    background: var(--bela-pozadina);
   }
 
   ul {
@@ -145,7 +147,7 @@
 
 @layer utilities {
   .pozadina {
-    @apply bg-linear-to-b from-crvena to-white;
+    @apply bg-linear-to-b from-crvena to-bela-pozadina;
   }
 
   .min-visina {
