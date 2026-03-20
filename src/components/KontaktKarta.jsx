@@ -1,56 +1,81 @@
 import { FaWhatsapp, FaViber } from "react-icons/fa";
-import Telefon from "./Telefon";
+import { BadgeCheck, FolderOpen } from "lucide-react";
+import Telefon from "@/components/Telefon";
 
 const osoba = {
-    ime: 'Zivojin Milic',
-    broj: '060 600 1780',
-    telefon: '381600877647',
-    slika: 'https://i.imgur.com/yXOvdOSs.jpg',
+    ime: "Hedge Lamar",
+    telefon: "381600877647",
+    slika: "https://i.imgur.com/yXOvdOSs.jpg",
 };
 
-const boje = {
-    crvena: "border-crvena shadow-crvena",
-    plava: "border-plava shadow-plava",
-    tamnocrvena: "border-tamnocrvena shadow-tamnocrvena",
-}
+const ikonaBoja = {
+    crvena: "text-crvena",
+    plava: "text-plava",
+    tamnocrvena: "text-tamnocrvena",
+};
 
-function KontaktKarta({ boja = "crvena" }) {
+const radnikOpis = {
+    crvena: "Putnički i kombi program",
+    plava: "Azijski putnički i kombi program",
+    tamnocrvena: "Teretni i dostavni program",
+};
+
+function KontaktKarta({ boja = "crvena", ikona = "badge-check", className = "" }) {
+    const bojaIkona = ikonaBoja[boja] ?? "text-neutral-600";
+    const opisRadnika = radnikOpis[boja] ?? "Specijalizovani prodajni program";
+
     return (
-        <div className={`p-8 kol items-center rounded-2xl bg-gray-100 border-4 shadow-[4px_4px_0] ${boje[boja]}`}>
-            <div className="mb-2 w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden">
-                <img
-                    src={osoba.slika}
-                    alt={osoba.ime}
-                    width={100}
-                    height={100}
-                    className="w-full h-full object-cover"
+        <article className={`kontakt-karta-id w-11/12 max-w-[20rem] md:max-w-md mx-0 p-4 kol gap-6 md:gap-4 relative ${className}`.trim()}>
+            <div className={`absolute top-4 right-4 ${bojaIkona}`} aria-hidden>
+                {ikona === "file" ? (
+                    <FolderOpen className="w-8 h-8" strokeWidth={1.8} />
+                ) : (
+                    <BadgeCheck className="w-8 h-8" strokeWidth={1.8} />
+                )}
+            </div>
+
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-4">
+                <div className="rounded-xl overflow-hidden flex-shrink-0 w-28 h-28 shadow-md ring-1 ring-black/5">
+                    <img
+                        src={osoba.slika}
+                        alt={osoba.ime}
+                        width={112}
+                        height={112}
+                        className="w-full h-full object-cover"
+                    />
+                </div>
+                <div className="kol justify-end min-h-0 md:min-h-[6rem] text-center md:text-left">
+                    <h2 className="text-xl md:text-2xl font-semibold tracking-tight leading-tight text-neutral-900">
+                        {osoba.ime}
+                    </h2>
+                    <p className="text-sm md:text-base font-normal text-neutral-500">
+                        {opisRadnika}
+                    </p>
+                </div>
+            </div>
+
+            <div className="grid grid-cols-3 w-full gap-4 mt-4">
+                <button
+                    className="kontakt-dugme kontakt-karta-dugme text-violet-500 w-full"
+                    onClick={() => (window.location.href = `viber://chat?number=${osoba.telefon}`)}
+                    aria-label={`Viber sa ${osoba.ime}`}
+                >
+                    <FaViber size={24} />
+                </button>
+                <Telefon
+                    telefon={osoba.telefon}
+                    ariaLabel={`Pozovi ${osoba.ime}`}
+                    className="w-full"
                 />
-            </div>
-
-            <h2 className="mb-4 text-xl font-bold text-shadow-2xl text-black/80">
-                {osoba.ime}
-            </h2>
-
-            <p className="mb-12 text-2xl font-extrabold tracking-wider">
-                {osoba.broj}
-            </p>
-
-            <div className="flex gap-12">
-                <button className="kontakt-dugme bg-violet-500 hover:bg-violet-700"
-                    onClick={() => window.location.href = `viber://chat?number=${osoba.telefon}`}
-                    aria-label={`Otvori Viber ćaskanje sa ${osoba.ime}`}>
-                    <FaViber size={28} />
-                </button>
-
-                <Telefon telefon={osoba.telefon} />
-
-                <button className="kontakt-dugme bg-green-500 hover:bg-green-700"
+                <button
+                    className="kontakt-dugme kontakt-karta-dugme text-green-500 w-full"
                     onClick={() => window.open(`https://wa.me/${osoba.telefon}`, "_blank")}
-                    aria-label={`Otvori WhatsUp ćaskanje sa ${osoba.ime}`}>
-                    <FaWhatsapp size={28} />
+                    aria-label={`WhatsApp sa ${osoba.ime}`}
+                >
+                    <FaWhatsapp size={24} />
                 </button>
             </div>
-        </div >
+        </article>
     );
 }
 
