@@ -193,7 +193,7 @@ function Pocetna() {
 
             <section
                 ref={statsRef}
-                className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 bg-neutral-100"
+                className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24"
                 aria-labelledby="company-stats-heading"
             >
                 <h2 id="company-stats-heading" className="sr-only">
