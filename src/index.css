@@ -152,10 +152,6 @@
     @apply min-h-[calc(100vh-5rem)];
   }
 
-  .logo {
-    @apply font-bold text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl tracking-tight drop-shadow-md;
-  }
-
   .text-naslov {
     @apply text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl tracking-tight;
   }

@@ -133,32 +133,42 @@ function Pocetna() {
     return (
         <main>
             <div className="pozadina">
-                <section className="kol justify-around items-center gap-4 min-visina">
-                    <div className="w-full flex justify-center items-center">
-                        <div className="logo font-logo-kombi text-end drop-shadow-black drop-shadow-xl whitespace-pre-line">
-                            {"KOMBI\nKLUB"}
+                <section className="flex flex-col md:flex-row overflow-x-hidden">
+                    <div className="w-full md:w-2/3 min-visina kol justify-around items-center">
+                        <div className="text-center">
+                            <div className="font-bold text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl text-white tracking-tight drop-shadow-black drop-shadow-md font-logo-kombi">
+                                KOMBI KLUB
+                            </div>
+
+                            <p className="px-5 py-2.5 mt-4 inline-flex justify-center items-center rounded-xl bg-white/10 border border-white/20 tracking-wide leading-tight font-semibold text-white backdrop-blur-sm shadow-[0_8px_28px_rgba(0,0,0,0.15)] drop-shadow-black drop-shadow-sm select-none pointer-events-none">
+                                <span className="text-lg sm:text-xl md:text-2xl xl:text-3xl 2xl:text-4xl">
+                                    Vaš najpouzdaniji partner na putu
+                                </span>
+                            </p>
                         </div>
 
-                        <img src={kombi} alt="Kombi VW T2, Kombi Klub" className="w-1/3" fetchPriority="high" width={260} height={150} />
+                        <div className="mt-4 wrap flex-col xs:flex-row gap-4 md:gap-6">
+                            <Dugme className="bg-crvena hover:bg-crvena/80"
+                                onClick={() => skrolujDo("laki-program")}>
+                                Putnički i kombi program
+                            </Dugme>
+                            <Dugme className="bg-plava hover:bg-plava/80"
+                                onClick={() => skrolujDo("azijski-program")}>
+                                Azijski program
+                            </Dugme>
+                            <Dugme className="bg-tamnocrvena hover:bg-tamnocrvena/80"
+                                onClick={() => skrolujDo("teretni-program")}>
+                                Teretni program
+                            </Dugme>
+                        </div>
                     </div>
 
-                    <div className="wrap flex-col xs:flex-row gap-4 md:gap-8">
-                        <Dugme className="bg-crvena hover:bg-crvena/80"
-                            onClick={() => skrolujDo("laki-program")}>
-                            Putnički i kombi program
-                        </Dugme>
-                        <Dugme className="bg-plava hover:bg-plava/80"
-                            onClick={() => skrolujDo("azijski-program")}>
-                            Azijski program
-                        </Dugme>
-                        <Dugme className="bg-tamnocrvena hover:bg-tamnocrvena/80"
-                            onClick={() => skrolujDo("teretni-program")}>
-                            Teretni program
-                        </Dugme>
+                    <div className="mt-4 md:mt-0 w-2/3 md:w-1/3 self-end md:self-center">
+                        <img src={kombi} alt="Kombi VW T2, Kombi Klub" className="w-full right-0 translate-x-1/4 select-none pointer-events-none" draggable="false" fetchPriority="high" width={260} height={150} />
                     </div>
                 </section>
 
-                <section className="mt-16 text-shadow-lg">
+                <section className="mt-8 text-shadow-lg">
                     <h1 className="mx-auto mb-24 text-naslov text-center font-semibold whitespace-pre-line text-neutral-800">
                         {"Prodavnica autodelova\nza sva putnička i teretna vozila"}
                     </h1>
