@@ -157,7 +157,7 @@
   }
 
   .sekcija-senka {
-    @apply shadow-section;
+    @apply shadow-[0px_4px_1rem_0_black];
   }
 
   .kol {
