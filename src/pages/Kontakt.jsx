@@ -24,7 +24,7 @@ function Kontakt() {
             </section>
 
             <section className="my-28">
-                <h2 className="px-4 text-center text-3xl font-medium text-neutral-700 tracking-tight">Kontaktirajte prodavca za vaš program</h2>
+                <h2 className="text-center text-3xl font-medium text-neutral-700 tracking-tight">Kontaktirajte prodavca</h2>
 
                 <Linija />
 
@@ -42,9 +42,7 @@ function Kontakt() {
             </section>
 
             <section className="my-28">
-                <h2 className="px-4 text-center text-3xl font-medium md:whitespace-pre-line text-neutral-700 tracking-tight">
-                    {"Za informacije u vezi sa fakturama i dugovanjima,\nkontaktirajte računovodstvo"}
-                </h2>
+                <h2 className="text-center text-3xl font-medium text-neutral-700 tracking-tight">Kontaktirajte računovodstvo</h2>
 
                 <Linija />
 
