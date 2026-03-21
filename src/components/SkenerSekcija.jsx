@@ -6,11 +6,11 @@ import Linija from "@/components/Linija";
 function SkenerSekcija() {
     return (
         <section className="w-full">
-            <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-10 lg:py-12">
+            <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 pt-16 lg:pt-24 pb-12">
                 <h2 className=" w-full text-naslov text-center font-semibold text-neutral-900">
                     Skeniraj saobraćajnu
                 </h2>
-                <div className="mb-16 md:mb-24 w-full flex justify-center">
+                <div className="mb-16 md:mb-24">
                     <Linija boja="crvena" />
                 </div>
 
