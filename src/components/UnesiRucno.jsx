@@ -40,7 +40,7 @@ function UnesiRucno() {
     };
 
     return (
-        <section className="mt-16 lg:mt-24 w-full border-t border-neutral-300/80">
+        <section id="unesi-rucno" className="mt-16 lg:mt-24 w-full border-t border-neutral-300/80 scroll-mt-20">
             <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 pt-12 lg:pt-16 pb-20 lg:pb-28">
                 <h2 className="w-full text-naslov text-center font-semibold text-neutral-900">
                     Unesi podatke ručno

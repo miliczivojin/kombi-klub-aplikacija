@@ -4,6 +4,7 @@ import UnesiRucno from "@/components/UnesiRucno";
 
 import Dugme from "@/components/Dugme";
 import Linija from "@/components/Linija";
+import { skrolujDo } from "@/utils/skrolujDo";
 
 function PronadjiDelove() {
     return (
@@ -28,11 +29,11 @@ function PronadjiDelove() {
 
                 <div className="px-4 relative z-10 wrap flex-col xs:flex-row gap-4 md:gap-8">
                     <Dugme className="bg-crvena hover:bg-crvena/90"
-                        onClick={() => { }}>
+                        onClick={() => skrolujDo("skener-saobracajnu")}>
                         Skeniraj saobraćajnu
                     </Dugme>
                     <Dugme className="bg-neutral-700 hover:bg-neutral-600"
-                        onClick={() => { }}>
+                        onClick={() => skrolujDo("unesi-rucno")}>
                         Unesi podatke ručno
                     </Dugme>
                 </div>

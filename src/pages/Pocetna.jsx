@@ -11,10 +11,7 @@ import { Users, Calendar, Award, ShieldCheck } from "lucide-react";
 import Dugme from "@/components/Dugme";
 import KontaktKarta from "@/components/KontaktKarta";
 import Linija from "@/components/Linija";
-
-const skrolujDo = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-};
+import { skrolujDo } from "@/utils/skrolujDo";
 
 const easeOutCubic = (t) => 1 - (1 - t) ** 3;
 

@@ -5,7 +5,7 @@ import Linija from "@/components/Linija";
 
 function SkenerSekcija() {
     return (
-        <section className="w-full">
+        <section id="skener-saobracajnu" className="w-full scroll-mt-20">
             <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 pt-16 lg:pt-24 pb-12">
                 <h2 className=" w-full text-naslov text-center font-semibold text-neutral-900">
                     Skeniraj saobraćajnu
