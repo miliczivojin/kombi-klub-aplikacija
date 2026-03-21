@@ -140,7 +140,7 @@ function Pocetna() {
                                 KOMBI KLUB
                             </div>
 
-                            <p className="px-5 py-2.5 mt-4 inline-flex justify-center items-center rounded-xl bg-white/10 border border-white/20 tracking-wide leading-tight font-semibold text-white backdrop-blur-sm shadow-[0_8px_28px_rgba(0,0,0,0.15)] drop-shadow-black drop-shadow-sm select-none pointer-events-none">
+                            <p className="px-5 py-2.5 mx-2.5 mt-4 inline-flex justify-center items-center rounded-xl bg-white/10 border border-white/20 tracking-wide leading-tight font-semibold text-white backdrop-blur-sm shadow-[0_8px_28px_rgba(0,0,0,0.15)] drop-shadow-black drop-shadow-sm select-none pointer-events-none">
                                 <span className="text-lg sm:text-xl md:text-2xl xl:text-3xl 2xl:text-4xl">
                                     Vaš najpouzdaniji partner na putu
                                 </span>
