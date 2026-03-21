@@ -52,7 +52,7 @@ function Kontakt() {
                     </div>
 
                     <div className="kol w-full max-w-md justify-center">
-                        <article className="kontakt-karta-id w-full h-full p-6 kol gap-4">
+                        <article className="kontakt-karta-id w-full h-full p-6 kol gap-4 rounded-none xs:rounded-xl">
                             <div className="kol text-left gap-2">
                                 <h4 className="text-lg sm:text-xl font-semibold tracking-tight text-neutral-900">
                                     Podaci o firmi
