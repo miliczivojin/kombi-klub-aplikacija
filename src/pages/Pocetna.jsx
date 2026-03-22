@@ -130,7 +130,7 @@ function Pocetna() {
     return (
         <main>
             <div className="pozadina">
-                <section className="flex flex-col md:flex-row overflow-x-hidden">
+                <section className="flex flex-col md:flex-row overflow-hidden">
                     <div className="w-full md:w-2/3 min-visina kol justify-around items-center">
                         <div className="text-center">
                             <div className="font-bold text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl text-white tracking-tight drop-shadow-black drop-shadow-md font-logo-kombi">
