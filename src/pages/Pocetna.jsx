@@ -291,8 +291,8 @@ function Pocetna() {
             />
 
             <section className="my-24">
-                <h2 className="py-4 mb-8 mx-auto w-fit text-naslov text-center font-bold tracking-tight bg-linear-to-r from-crvena to-plava bg-clip-text text-transparent whitespace-pre-line">
-                    {"Zvanični predstavnici Bilstein grupe\nza jugoistočnu Srbiju"}
+                <h2 className="py-4 mb-8 mx-auto w-fit text-naslov text-center !tracking-normal font-bold bg-linear-to-r from-crvena to-plava bg-clip-text text-transparent">
+                    Zvanični predstavnici Bilstein grupe
                 </h2>
 
                 <div className="red justify-center items-center sm:items-end gap-16">
