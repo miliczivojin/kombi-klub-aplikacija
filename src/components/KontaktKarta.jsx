@@ -3,7 +3,7 @@ import { BadgeCheck, FolderOpen } from "lucide-react";
 import Telefon from "@/components/Telefon";
 
 const osoba = {
-    ime: "Hedge Lamar",
+    ime: "Mihajlo Mihajlovic",
     telefon: "381600877647",
     slika: "https://i.imgur.com/yXOvdOSs.jpg",
 };
@@ -54,7 +54,7 @@ function KontaktKarta({ boja = "crvena", ikona = "badge-check", className = "" }
                 </div>
             </div>
 
-            <div className="grid grid-cols-3 w-full gap-4 mt-4">
+            <div className="grid grid-cols-3 w-full gap-3 mt-4">
                 <button
                     className="kontakt-dugme kontakt-karta-dugme text-violet-500 w-full"
                     onClick={() => (window.location.href = `viber://chat?number=${osoba.telefon}`)}
