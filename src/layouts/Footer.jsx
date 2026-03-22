@@ -44,7 +44,7 @@ function Footer() {
                 </div>
             </div>
 
-            <p className="mt-8 pt-8 border-t border-white/20 text-center text-sm font-normal text-white">
+            <p className="mt-16 pt-8 border-t border-white/20 text-center text-sm font-normal text-white">
                 Kombi Klub Developer Team © {godina}
             </p>
         </footer>
