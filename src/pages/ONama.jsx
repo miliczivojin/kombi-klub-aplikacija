@@ -60,13 +60,17 @@ const ocene = [
     },
 ];
 
+const klasaZvezde = "flex items-center gap-1";
+const klasaZvezdaPopunjena = "fill-amber-400 text-amber-700";
+const klasaZvezdaNepopunjena = "text-neutral-400";
+
 function Zvezde({ vrednost }) {
     return (
-        <div className="flex items-center gap-1" aria-label={`Ocena ${vrednost} od 5`}>
+        <div className={klasaZvezde} aria-label={`Ocena ${vrednost} od 5`}>
             {Array.from({ length: 5 }, (_, i) => (
                 <Star
                     key={i}
-                    className={`h-4 w-4 ${i < vrednost ? "fill-amber-400 text-amber-700" : "text-neutral-400"}`}
+                    className={`h-4 w-4 ${i < vrednost ? klasaZvezdaPopunjena : klasaZvezdaNepopunjena}`}
                     aria-hidden
                 />
             ))}
