@@ -8,25 +8,29 @@ const osoba = {
     slika: "https://i.imgur.com/yXOvdOSs.jpg",
 };
 
-const ikonaBoja = {
+const bojaIkoneMapa = {
     crvena: "text-crvena",
     plava: "text-plava",
     tamnocrvena: "text-tamnocrvena",
 };
 
-const radnikOpis = {
+const opisProgramaMapa = {
     crvena: "Putnički i kombi program",
     plava: "Azijski putnički i kombi program",
     tamnocrvena: "Teretni i dostavni program",
 };
 
+const klasaKartice =
+    "p-4 kontakt-karta-id w-11/12 max-w-[20rem] md:max-w-md mx-0 kol gap-6 md:gap-4 relative";
+const klasaAkcionogDugmeta = "kontakt-dugme kontakt-karta-dugme w-full";
+
 function KontaktKarta({ boja = "crvena", ikona = "badge-check", className = "" }) {
-    const bojaIkona = ikonaBoja[boja] ?? "text-neutral-600";
-    const opisRadnika = radnikOpis[boja] ?? "Specijalizovani prodajni program";
+    const klasaBojeIkone = bojaIkoneMapa[boja] ?? "text-neutral-600";
+    const opisPrograma = opisProgramaMapa[boja] ?? "Specijalizovani prodajni program";
 
     return (
-        <article className={`kontakt-karta-id w-11/12 max-w-[20rem] md:max-w-md mx-0 p-4 kol gap-6 md:gap-4 relative ${className}`.trim()}>
-            <div className={`absolute top-4 right-4 ${bojaIkona}`} aria-hidden>
+        <article className={`${klasaKartice} ${className}`.trim()}>
+            <div className={`absolute top-4 right-4 ${klasaBojeIkone}`} aria-hidden>
                 {ikona === "file" ? (
                     <FolderOpen className="w-8 h-8" strokeWidth={1.8} />
                 ) : (
@@ -49,14 +53,14 @@ function KontaktKarta({ boja = "crvena", ikona = "badge-check", className = "" }
                         {osoba.ime}
                     </h2>
                     <p className="text-sm md:text-base font-normal text-neutral-500">
-                        {opisRadnika}
+                        {opisPrograma}
                     </p>
                 </div>
             </div>
 
             <div className="grid grid-cols-3 w-full gap-3 mt-4">
                 <button
-                    className="kontakt-dugme kontakt-karta-dugme text-violet-500 w-full"
+                    className={`${klasaAkcionogDugmeta} text-violet-500`}
                     onClick={() => (window.location.href = `viber://chat?number=${osoba.telefon}`)}
                     aria-label={`Viber sa ${osoba.ime}`}
                 >
@@ -68,7 +72,7 @@ function KontaktKarta({ boja = "crvena", ikona = "badge-check", className = "" }
                     className="w-full"
                 />
                 <button
-                    className="kontakt-dugme kontakt-karta-dugme text-green-500 w-full"
+                    className={`${klasaAkcionogDugmeta} text-green-500`}
                     onClick={() => window.open(`https://wa.me/${osoba.telefon}`, "_blank")}
                     aria-label={`WhatsApp sa ${osoba.ime}`}
                 >
