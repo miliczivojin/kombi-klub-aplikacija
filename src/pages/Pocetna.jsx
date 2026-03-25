@@ -47,6 +47,12 @@ const STATS = [
     },
 ];
 
+const klasaProgramOdeljak = "my-24 scroll-mt-20";
+const klasaProgramKontejner = "w-full flex flex-col items-center";
+const klasaProgramLinija = "mb-10 w-full flex justify-center";
+const klasaProgramKarte = "xs:px-4 wrap gap-8 sm:gap-12";
+const klasaProgramNaslovOsnova = "w-full text-center text-naslov font-semibold";
+
 function useCountUp(isActive, target, durationMs = 1500) {
     const [display, setDisplay] = useState(0);
     const startRef = useRef(null);
@@ -233,40 +239,40 @@ function Pocetna() {
                 </div>
             </section>
 
-            <section id="laki-program" className="my-24 scroll-mt-20">
-                <div className="w-full flex flex-col items-center">
-                    <h2 className={`w-full text-center text-naslov text-crvena font-semibold`}>
+            <section id="laki-program" className={klasaProgramOdeljak}>
+                <div className={klasaProgramKontejner}>
+                    <h2 className={`${klasaProgramNaslovOsnova} text-crvena`}>
                         Putnički i kombi program
                     </h2>
-                    <div className="mb-10 w-full flex justify-center"><Linija boja="crvena" /></div>
+                    <div className={klasaProgramLinija}><Linija boja="crvena" /></div>
                 </div>
-                <div className="xs:px-4 wrap gap-8 sm:gap-12">
+                <div className={klasaProgramKarte}>
                     <KontaktKarta boja="crvena" />
                     <KontaktKarta boja="crvena" />
                     <KontaktKarta boja="crvena" />
                 </div>
             </section>
 
-            <section id="azijski-program" className="my-24 scroll-mt-20">
-                <div className="w-full flex flex-col items-center">
-                    <h2 className={`w-full text-center text-naslov text-plava font-semibold`}>
+            <section id="azijski-program" className={klasaProgramOdeljak}>
+                <div className={klasaProgramKontejner}>
+                    <h2 className={`${klasaProgramNaslovOsnova} text-plava`}>
                         Azijski program
                     </h2>
-                    <div className="mb-10 w-full flex justify-center"><Linija boja="plava" /></div>
+                    <div className={klasaProgramLinija}><Linija boja="plava" /></div>
                 </div>
-                <div className="xs:px-4 wrap gap-8 sm:gap-12">
+                <div className={klasaProgramKarte}>
                     <KontaktKarta boja="plava" />
                 </div>
             </section>
 
-            <section id="teretni-program" className="my-24 scroll-mt-20">
-                <div className="w-full flex flex-col items-center">
-                    <h2 className={`w-full text-center text-naslov text-tamnocrvena font-semibold`}>
+            <section id="teretni-program" className={klasaProgramOdeljak}>
+                <div className={klasaProgramKontejner}>
+                    <h2 className={`${klasaProgramNaslovOsnova} text-tamnocrvena`}>
                         Teretni program
                     </h2>
-                    <div className="mb-10 w-full flex justify-center"><Linija boja="tamnocrvena" /></div>
+                    <div className={klasaProgramLinija}><Linija boja="tamnocrvena" /></div>
                 </div>
-                <div className="xs:px-4 wrap gap-8 sm:gap-12">
+                <div className={klasaProgramKarte}>
                     <KontaktKarta boja="tamnocrvena" />
                     <KontaktKarta boja="tamnocrvena" />
                 </div>
