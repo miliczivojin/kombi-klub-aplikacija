@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Linija from "@/components/Linija";
 
-const inputKlasik =
+const unosKlasik =
     "w-full rounded-xl border border-neutral-400 bg-white px-4 py-2 text-sm sm:text-base text-neutral-900 placeholder:text-neutral-400 transition-[border-color,box-shadow] outline-none focus:border-neutral-500 focus:ring-2 focus:ring-neutral-500/25 focus:shadow-[0_0_0_4px_rgba(0,0,0,0.05)]";
 
-const inputSasija =
+const unosSasija =
     "w-full rounded-xl border-2 border-crvena/70 bg-crvena-soft/90 px-4 py-2 text-sm sm:text-base text-neutral-900 placeholder:text-neutral-500 transition-[border-color,box-shadow] outline-none focus:border-crvena focus:ring-2 focus:ring-crvena/25 focus:shadow-[0_0_0_4px_rgba(185,30,30,0.1)]";
 
 function GreskaPolje({ poruka }) {
@@ -12,7 +12,7 @@ function GreskaPolje({ poruka }) {
 }
 
 function UnesiRucno() {
-    const [values, setValues] = useState({
+    const [vrednosti, setVrednosti] = useState({
         d1: "",
         d2: "",
         d3: "",
@@ -22,21 +22,21 @@ function UnesiRucno() {
         p3: "",
     });
 
-    const [touched, setTouched] = useState({});
-    const [submitted, setSubmitted] = useState(false);
+    const [dodirnuto, setDodirnuto] = useState({});
+    const [poslato, setPoslato] = useState(false);
 
-    const set = (key) => (e) => setValues((v) => ({ ...v, [key]: e.target.value }));
+    const postavi = (key) => (e) => setVrednosti((v) => ({ ...v, [key]: e.target.value }));
 
-    const requiredError = (key) => {
-        return (values[key]?.trim() || (!submitted && !touched[key]))
+    const obaveznaGreska = (key) => {
+        return (vrednosti[key]?.trim() || (!poslato && !dodirnuto[key]))
             ? null
             : "Ovo polje je obavezno";
     };
 
-    const handleSubmit = (e) => {
+    const obradiSlanje = (e) => {
         e.preventDefault();
-        setSubmitted(true);
-        if (!values.d1.trim() || !values.d2.trim() || !values.e.trim()) return;
+        setPoslato(true);
+        if (!vrednosti.d1.trim() || !vrednosti.d2.trim() || !vrednosti.e.trim()) return;
     };
 
     return (
@@ -50,7 +50,7 @@ function UnesiRucno() {
                 </div>
 
                 <form
-                    onSubmit={handleSubmit}
+                    onSubmit={obradiSlanje}
                     className="mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8"
                     noValidate
                 >
@@ -63,14 +63,14 @@ function UnesiRucno() {
                             name="d1"
                             type="text"
                             autoComplete="off"
-                            value={values.d1}
-                            onChange={set("d1")}
-                            onBlur={() => setTouched((t) => ({ ...t, d1: true }))}
+                            value={vrednosti.d1}
+                            onChange={postavi("d1")}
+                            onBlur={() => setDodirnuto((t) => ({ ...t, d1: true }))}
                             placeholder="npr. Volkswagen"
-                            aria-invalid={!!requiredError("d1")}
-                            className={inputKlasik}
+                            aria-invalid={!!obaveznaGreska("d1")}
+                            className={unosKlasik}
                         />
-                        <GreskaPolje poruka={requiredError("d1")} />
+                        <GreskaPolje poruka={obaveznaGreska("d1")} />
                     </div>
 
                     <div className="kol gap-1">
@@ -82,14 +82,14 @@ function UnesiRucno() {
                             name="d2"
                             type="text"
                             autoComplete="off"
-                            value={values.d2}
-                            onChange={set("d2")}
-                            onBlur={() => setTouched((t) => ({ ...t, d2: true }))}
+                            value={vrednosti.d2}
+                            onChange={postavi("d2")}
+                            onBlur={() => setDodirnuto((t) => ({ ...t, d2: true }))}
                             placeholder="npr. Golf"
-                            aria-invalid={!!requiredError("d2")}
-                            className={inputKlasik}
+                            aria-invalid={!!obaveznaGreska("d2")}
+                            className={unosKlasik}
                         />
-                        <GreskaPolje poruka={requiredError("d2")} />
+                        <GreskaPolje poruka={obaveznaGreska("d2")} />
                     </div>
 
                     <div className="kol gap-1 md:col-span-2">
@@ -101,10 +101,10 @@ function UnesiRucno() {
                             name="d3"
                             type="text"
                             autoComplete="off"
-                            value={values.d3}
-                            onChange={set("d3")}
+                            value={vrednosti.d3}
+                            onChange={postavi("d3")}
                             placeholder="npr. putničko vozilo"
-                            className={inputKlasik}
+                            className={unosKlasik}
                         />
                     </div>
 
@@ -119,17 +119,17 @@ function UnesiRucno() {
                             autoComplete="off"
                             inputMode="text"
                             maxLength={17}
-                            value={values.e}
-                            onChange={set("e")}
-                            onBlur={() => setTouched((t) => ({ ...t, e: true }))}
+                            value={vrednosti.e}
+                            onChange={postavi("e")}
+                            onBlur={() => setDodirnuto((t) => ({ ...t, e: true }))}
                             placeholder="npr. WVWZZZ1JZXW000001"
-                            aria-invalid={!!requiredError("e")}
-                            className={inputSasija}
+                            aria-invalid={!!obaveznaGreska("e")}
+                            className={unosSasija}
                         />
                         <p className="text-xs text-neutral-600">
                             Jedinstveni broj vozila (17 znakova; na dokumentu obično označen kao E).
                         </p>
-                        <GreskaPolje poruka={requiredError("e")} />
+                        <GreskaPolje poruka={obaveznaGreska("e")} />
                     </div>
 
                     <div className="kol gap-1">
@@ -141,10 +141,10 @@ function UnesiRucno() {
                             name="p1"
                             type="text"
                             autoComplete="off"
-                            value={values.p1}
-                            onChange={set("p1")}
+                            value={vrednosti.p1}
+                            onChange={postavi("p1")}
                             placeholder="npr. 1598 cm³"
-                            className={inputKlasik}
+                            className={unosKlasik}
                         />
                     </div>
 
@@ -159,10 +159,10 @@ function UnesiRucno() {
                             min={0}
                             step="0.1"
                             inputMode="decimal"
-                            value={values.p2}
-                            onChange={set("p2")}
+                            value={vrednosti.p2}
+                            onChange={postavi("p2")}
                             placeholder="npr. 81"
-                            className={inputKlasik}
+                            className={unosKlasik}
                         />
                     </div>
 
@@ -175,10 +175,10 @@ function UnesiRucno() {
                             name="p3"
                             type="text"
                             autoComplete="off"
-                            value={values.p3}
-                            onChange={set("p3")}
+                            value={vrednosti.p3}
+                            onChange={postavi("p3")}
                             placeholder="npr. dizel, benzin, hibrid"
-                            className={inputKlasik}
+                            className={unosKlasik}
                         />
                     </div>
 

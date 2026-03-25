@@ -1,4 +1,4 @@
-import pozadina from "@/assets/photos/pozadina_delovi.webp";
+import slikaPozadine from "@/assets/photos/pozadina_delovi.webp";
 import SkenerSekcija from "@/components/SkenerSekcija";
 import UnesiRucno from "@/components/UnesiRucno";
 
@@ -11,7 +11,7 @@ function PronadjiDelove() {
         <main>
             <div className="relative kol justify-around items-center w-full min-visina overflow-hidden sekcija-senka">
                 <img
-                    src={pozadina}
+                    src={slikaPozadine}
                     alt=""
                     className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none"
                     fetchPriority="high"
