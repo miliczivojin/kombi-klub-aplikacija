@@ -1,6 +1,6 @@
-import logo from "@/assets/photos/onama.png";
-import kombiKlubRadnja from "@/assets/photos/kombiklub.png";
-import nocaJapanac from "@/assets/photos/nocajapanac.png";
+import logo from "@/assets/photos/onama.svg";
+import kombiKlubRadnja from "@/assets/photos/kombiklub.webp";
+import nocaJapanac from "@/assets/photos/nocajapanac.webp";
 import { MapPin, Star } from "lucide-react";
 import Linija from "@/components/Linija";
 import Dugme from "@/components/Dugme";

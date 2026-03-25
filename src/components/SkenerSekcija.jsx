@@ -1,6 +1,6 @@
 import { Camera, ImagePlus } from "lucide-react";
 import Dugme from "@/components/Dugme";
-import saobracajnaImg from "@/assets/photos/saobracajna.png";
+import saobracajnaImg from "@/assets/photos/saobracajna.webp";
 import Linija from "@/components/Linija";
 
 function SkenerSekcija() {

@@ -2,10 +2,10 @@ import { useRef, useState, useEffect } from "react";
 import kombi from "@/assets/photos/kombi-pocetna.svg";
 import godine from "@/assets/photos/20godina.webp";
 import garancija from "@/assets/photos/garancija.png";
-import blueprint from "@/assets/photos/blueprint.png";
+import blueprint from "@/assets/photos/blueprint.webp";
 import febi from "@/assets/photos/febi.png";
 import swag from "@/assets/photos/swag.png";
-import blueprintPlavi from "@/assets/photos/blueprint_plavi.png";
+import blueprintPlavi from "@/assets/photos/blueprint_plavi.webp";
 import { Users, Calendar, Award, ShieldCheck } from "lucide-react";
 
 import Dugme from "@/components/Dugme";
