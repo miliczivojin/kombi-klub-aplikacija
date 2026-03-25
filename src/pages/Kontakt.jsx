@@ -3,9 +3,9 @@ import Linija from "@/components/Linija";
 import KontaktKarta from "@/components/KontaktKarta";
 
 const radnici = [
-    { naslov: "Putnički i kombi program", boja: "crvena", text: "text-crvena" },
-    { naslov: "Azijski program", boja: "plava", text: "text-plava" },
-    { naslov: "Teretni program", boja: "tamnocrvena", text: "text-tamnocrvena" },
+    { naslov: "Putnički i kombi program", boja: "crvena", klasaTeksta: "text-crvena" },
+    { naslov: "Azijski program", boja: "plava", klasaTeksta: "text-plava" },
+    { naslov: "Teretni program", boja: "tamnocrvena", klasaTeksta: "text-tamnocrvena" },
 ];
 
 const podaciFirma = [
@@ -15,6 +15,11 @@ const podaciFirma = [
     { naslov: "Vlasnik i zastupnik", vrednost: "Novica Milić" },
 ];
 
+const klasaOdeljak = "my-28";
+const klasaNaslovSekcije =
+    "text-center text-3xl font-medium text-neutral-700 tracking-tight";
+const klasaWrap = "mt-8 xs:px-4 py-8 wrap gap-8 sm:gap-12";
+
 function Kontakt() {
     return (
         <main>
@@ -23,15 +28,15 @@ function Kontakt() {
                 <Karta />
             </section>
 
-            <section className="my-28">
-                <h2 className="text-center text-3xl font-medium text-neutral-700 tracking-tight">Kontaktirajte prodavca</h2>
+            <section className={klasaOdeljak}>
+                <h2 className={klasaNaslovSekcije}>Kontaktirajte prodavca</h2>
 
                 <Linija />
 
-                <div className="mt-8 xs:px-4 py-8 wrap gap-8 sm:gap-12">
-                    {radnici.map(({ naslov, boja, text }) => (
+                <div className={klasaWrap}>
+                    {radnici.map(({ naslov, boja, klasaTeksta }) => (
                         <div key={boja} className="kol w-11/12 max-w-[20rem] md:max-w-md">
-                            <h3 className={`mb-4 text-center text-xl font-semibold ${text}`}>
+                            <h3 className={`mb-4 text-center text-xl font-semibold ${klasaTeksta}`}>
                                 {naslov}
                             </h3>
 
@@ -41,12 +46,12 @@ function Kontakt() {
                 </div>
             </section>
 
-            <section className="my-28">
-                <h2 className="text-center text-3xl font-medium text-neutral-700 tracking-tight">Kontaktirajte računovodstvo</h2>
+            <section className={klasaOdeljak}>
+                <h2 className={klasaNaslovSekcije}>Kontaktirajte računovodstvo</h2>
 
                 <Linija />
 
-                <div className="mt-8 xs:px-4 py-8 wrap gap-8 sm:gap-12">
+                <div className={klasaWrap}>
                     <div className="kol w-full max-w-md justify-center items-center">
                         <KontaktKarta boja="crvena" ikona="file" className="w-full" />
                     </div>
