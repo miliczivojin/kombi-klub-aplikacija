@@ -7,6 +7,12 @@ const unosKlasik =
 const unosSasija =
     "w-full rounded-xl border-2 border-crvena/70 bg-crvena-soft/90 px-4 py-2 text-sm sm:text-base text-neutral-900 placeholder:text-neutral-500 transition-[border-color,box-shadow] outline-none focus:border-crvena focus:ring-2 focus:ring-crvena/25 focus:shadow-[0_0_0_4px_rgba(185,30,30,0.1)]";
 
+const klasaForma =
+    "mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8";
+
+const klasaDugmetaNastavi =
+    "w-full max-w-md px-4 py-2 border-2 sm:text-lg lg:text-xl border-black rounded-4xl shadow-[2px_2px_0_0_black] text-white font-semibold select-none cursor-pointer transition bg-crvena hover:bg-crvena/90";
+
 function GreskaPolje({ poruka }) {
     return (!poruka) ? null : <p className="text-sm text-crvena">{poruka}</p>;
 }
@@ -51,7 +57,7 @@ function UnesiRucno() {
 
                 <form
                     onSubmit={obradiSlanje}
-                    className="mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8"
+                    className={klasaForma}
                     noValidate
                 >
                     <div className="kol gap-1">
@@ -185,7 +191,7 @@ function UnesiRucno() {
                     <div className="mt-4 md:col-span-2 flex justify-center">
                         <button
                             type="submit"
-                            className="w-full max-w-md px-4 py-2 border-2 sm:text-lg lg:text-xl border-black rounded-4xl shadow-[2px_2px_0_0_black] text-white font-semibold select-none cursor-pointer transition bg-crvena hover:bg-crvena/90"
+                            className={klasaDugmetaNastavi}
                         >
                             Nastavi
                         </button>
